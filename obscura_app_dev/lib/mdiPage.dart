@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:obscura/dashboardPage.dart';
-import 'package:obscura/loginPage.dart';
-import 'package:obscura/profilPage.dart';
+import 'package:obscura/favoritePage.dart';
+import 'package:obscura/homePage.dart';
+import 'package:obscura/notificationPage.dart';
+import 'package:obscura/profilePage.dart';
 
 class MDIPage extends StatefulWidget {
   @override
@@ -10,7 +11,12 @@ class MDIPage extends StatefulWidget {
 
 class _MDIPageState extends State<MDIPage> {
   int _selectedIndex = 0;
-  final _indexOptions = [DashboardPage(), LoginPage(), ProfilePage()];
+  final _indexOptions = [
+    HomePage(),
+    FavoritePage(),
+    NotificationPage(),
+    ProfilePage()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +32,11 @@ class _MDIPageState extends State<MDIPage> {
         items: [
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.dashboard,
+                Icons.home,
                 color: Colors.grey[600],
               ),
               title: Text(
-                'Dashboard',
+                'Home',
                 style: TextStyle(color: Colors.grey[600]),
               )),
           BottomNavigationBarItem(
@@ -44,20 +50,20 @@ class _MDIPageState extends State<MDIPage> {
               )),
           BottomNavigationBarItem(
               icon: Icon(
+                Icons.notifications,
+                color: Colors.grey[600],
+              ),
+              title: Text(
+                'Notification',
+                style: TextStyle(color: Colors.grey[600]),
+              )),
+          BottomNavigationBarItem(
+              icon: Icon(
                 Icons.person,
                 color: Colors.grey[600],
               ),
               title: Text(
                 'Profil',
-                style: TextStyle(color: Colors.grey[600]),
-              )),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.calendar_today,
-                color: Colors.grey[600],
-              ),
-              title: Text(
-                'Attendance',
                 style: TextStyle(color: Colors.grey[600]),
               )),
         ],
